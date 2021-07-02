@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block head %} 
+<title> The Main Page </title>
+{% endblock %}
+
+{% block body %}
+<br><br><br><br>
+
+<div class="cl"> 
+<center><h1>Task Master</h1></center>
+<table class="table caption-top align-content-center">
+    <thead>
+      <tr>
+        <th scope="col">Task</th>
+        <th scope="col">Date Created</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    {% if tasks.count == 0 %}
+        <h3>No tasks added yet, please add :)</h3>
+    {% else %}
+    <tbody>
+        {% for Task in tasks %}
+            <tr>
+                <td>{{Task.task}}</td>
+                <td>{{Task.date_created}}</td>
+                <td>
+                    <a href="/update/{{Task.id}}"><button type="button" class="btn btn-warning"> Update </button></a>
+                    &nbsp;
+                    &nbsp;
+                    <a href="/delete/{{Task.id}}"><button type="button" class="btn btn-danger"> Delete </button></a>                     
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    {% endif %}
+  </table>
+<br><br>
+
+<form action="/" method="POST">
+    <input type="text" name="content" style="width: 450px;" id="content">
+    <input type="submit" class="btn btn-primary" value="Add Task">
+</form>
+</div>
+
+{% endblock %}
