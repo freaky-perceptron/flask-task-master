@@ -6,8 +6,6 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///mydb.db'
 db = SQLAlchemy(app)
 
-
-
 class TaskMaster(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     task = db.Column(db.String(200), nullable=False)
@@ -15,8 +13,7 @@ class TaskMaster(db.Model):
 
     def __repr__(self):
         return '<Task %r>' % self.id
-
-
+  
 @app.route('/', methods=['POST', 'GET'])
 def home():
     if request.method == 'POST':
@@ -59,7 +56,6 @@ def update(id):
             return redirect('/')
         except:
             return 'That didnt work'
-
 
 if __name__ == "__main__":
     app.run(debug=True)
