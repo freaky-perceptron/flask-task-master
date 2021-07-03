@@ -6,7 +6,7 @@ This repository contains a code for CRUD app named **Task Master** in Flask
 
 ![screenshot](https://github.com/freaky-perceptron/flask-task-master/blob/master/Screenshot%20from%202021-07-03%2017-59-18.png)
 
-<center><img src="https://github.com/freaky-perceptron/flask-task-master/blob/master/Screenshot%20from%202021-07-03%2017-59-18.png" alt="screenshot"></center>
+<center><img src="https://github.com/freaky-perceptron/flask-task-master/blob/master/Screenshot%20from%202021-07-03%2017-59-18.png" alt="screenshot" width=500 height=700></center>
 
 ### Functionalities
 * Can add a task
